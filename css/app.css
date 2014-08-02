@@ -1,0 +1,20 @@
+ul
+{
+    width: 325px;
+}
+li
+{
+    cursor: pointer;
+    display: block;
+    height: 25px;
+    float: left;
+    margin: 0;
+    padding: 0;
+    width: 25px;
+}
+div.activeColour
+{
+    clear: both;
+    height: 25px;
+    width: 125px;        
+}
