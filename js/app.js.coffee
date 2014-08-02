@@ -1,9 +1,10 @@
 # input colors. chromajs colors only if name of the color
-color1 = chroma(68.67, -13.07, -46.59, 'lab')
-color2 = chroma(76.84, 20.60, 51.06, 'lab')
+color1 = chroma(40, 0, -70.00, 'lab') # this can be a chroma color object. e.g. chroma(68.67, -13.07, -46.59, 'lab') or a color e.g. 'green'
+color2 = chroma(20, 0, 27.00, 'lab') # this can be a chroma color object. e.g. chroma(76.84, 20.60, 51.06, 'lab') or a color e.g. 'tan'
 
 # grid size. still experimental. default set to 12 for using lch color model
-grid_size = 12
+grid_size_effective = 20
+grid_size = grid_size_effective # placeholder for a later idea to scale with eater detail  
 icreament_size = 1 / grid_size
 
 $palette = $("#pallet1")
@@ -26,21 +27,22 @@ $palette17 = $("#pallet17")
 $palette18 = $("#pallet18")
 $palette19 = $("#pallet19")
 $palette20 = $("#pallet20")
+$palette21 = $("#pallet21")
 
 colurschema1 = []
 colurschema2 = []
 colurschema3 = []
 colurschema4 = []
 
-colurschema1.push chroma.interpolate(color1, "black", x, "lch").hex() for x in [0..1] by icreament_size
+# colurschema1.push chroma.interpolate(color1, "black", x, "lch").hex() for x in [0..1] by icreament_size
 colurschema2.push chroma.interpolate("black", color2, x, "lch").hex() for x in [0..1] by icreament_size
 colurschema3.push chroma.interpolate(color1, "white", x, "lch").hex() for x in [0..1] by icreament_size
 colurschema4.push chroma.interpolate("white", color2, x, "lch").hex() for x in [0..1] by icreament_size
 
 
-# colurs.push chroma.interpolate("black", "blue", x, "lch").hex() for x in [0..1] by 0.1
+# depends on the row size
 
-colurs1 = colurschema1
+colurs1 = []
 colurs2 = []
 colurs3 = []
 colurs4 = []
@@ -60,7 +62,9 @@ colurs17 = []
 colurs18 = []
 colurs19 = []
 colurs20 = []
+colurs21 = colurschema4
 
+colurs1.push chroma.interpolate(colurschema3[0], colurschema2[0], x, "lch").hex() for x in [0..1] by icreament_size
 colurs2.push chroma.interpolate(colurschema3[1], colurschema2[1], x, "lch").hex() for x in [0..1] by icreament_size
 colurs3.push chroma.interpolate(colurschema3[2], colurschema2[2], x, "lch").hex() for x in [0..1] by icreament_size
 colurs4.push chroma.interpolate(colurschema3[3], colurschema2[3], x, "lch").hex() for x in [0..1] by icreament_size
@@ -72,14 +76,14 @@ colurs9.push chroma.interpolate(colurschema3[8], colurschema2[8], x, "lch").hex(
 colurs10.push chroma.interpolate(colurschema3[9], colurschema2[9], x, "lch").hex() for x in [0..1] by icreament_size
 colurs11.push chroma.interpolate(colurschema3[10], colurschema2[10], x, "lch").hex() for x in [0..1] by icreament_size
 colurs12.push chroma.interpolate(colurschema3[11], colurschema2[11], x, "lch").hex() for x in [0..1] by icreament_size
-# colurs13.push chroma.interpolate(colurschema3[12], colurschema2[12], x, "lch").hex() for x in [0..1] by icreament_size
-# colurs14.push chroma.interpolate(colurschema3[13], colurschema2[13], x, "lch").hex() for x in [0..1] by icreament_size
-# colurs15.push chroma.interpolate(colurschema3[14], colurschema2[14], x, "lch").hex() for x in [0..1] by icreament_size
-# colurs16.push chroma.interpolate(colurschema3[15], colurschema2[15], x, "lch").hex() for x in [0..1] by icreament_size
-# colurs17.push chroma.interpolate(colurschema3[16], colurschema2[16], x, "lch").hex() for x in [0..1] by icreament_size
-# colurs18.push chroma.interpolate(colurschema3[17], colurschema2[17], x, "lch").hex() for x in [0..1] by icreament_size
-# colurs19.push chroma.interpolate(colurschema3[18], colurschema2[18], x, "lch").hex() for x in [0..1] by icreament_size
-# colurs20.push chroma.interpolate(colurschema3[19], colurschema2[19], x, "lch").hex() for x in [0..1] by icreament_size
+colurs13.push chroma.interpolate(colurschema3[12], colurschema2[12], x, "lch").hex() for x in [0..1] by icreament_size
+colurs14.push chroma.interpolate(colurschema3[13], colurschema2[13], x, "lch").hex() for x in [0..1] by icreament_size
+colurs15.push chroma.interpolate(colurschema3[14], colurschema2[14], x, "lch").hex() for x in [0..1] by icreament_size
+colurs16.push chroma.interpolate(colurschema3[15], colurschema2[15], x, "lch").hex() for x in [0..1] by icreament_size
+colurs17.push chroma.interpolate(colurschema3[16], colurschema2[16], x, "lch").hex() for x in [0..1] by icreament_size
+colurs18.push chroma.interpolate(colurschema3[17], colurschema2[17], x, "lch").hex() for x in [0..1] by icreament_size
+colurs19.push chroma.interpolate(colurschema3[18], colurschema2[18], x, "lch").hex() for x in [0..1] by icreament_size
+colurs20.push chroma.interpolate(colurschema3[19], colurschema2[19], x, "lch").hex() for x in [0..1] by icreament_size
 
   
 $palette.append $("<li />").css("background-color", colurs1[each]) for each in [0..grid_size]
@@ -94,11 +98,12 @@ $palette9.append $("<li />").css("background-color", colurs9[each]) for each in 
 $palette10.append $("<li />").css("background-color", colurs10[each]) for each in [0..grid_size]
 $palette11.append $("<li />").css("background-color", colurs11[each]) for each in [0..grid_size]
 $palette12.append $("<li />").css("background-color", colurs12[each]) for each in [0..grid_size]
-# $palette13.append $("<li />").css("background-color", colurs13[each]) for each in [0..grid_size]
-# $palette14.append $("<li />").css("background-color", colurs14[each]) for each in [0..grid_size]
-# $palette15.append $("<li />").css("background-color", colurs15[each]) for each in [0..grid_size]
-# $palette16.append $("<li />").css("background-color", colurs16[each]) for each in [0..grid_size]
-# $palette17.append $("<li />").css("background-color", colurs17[each]) for each in [0..grid_size]
-# $palette18.append $("<li />").css("background-color", colurs18[each]) for each in [0..grid_size]
-# $palette19.append $("<li />").css("background-color", colurs19[each]) for each in [0..grid_size]
-# $palette20.append $("<li />").css("background-color", colurs20[each]) for each in [0..grid_size]
+$palette13.append $("<li />").css("background-color", colurs13[each]) for each in [0..grid_size]
+$palette14.append $("<li />").css("background-color", colurs14[each]) for each in [0..grid_size]
+$palette15.append $("<li />").css("background-color", colurs15[each]) for each in [0..grid_size]
+$palette16.append $("<li />").css("background-color", colurs16[each]) for each in [0..grid_size]
+$palette17.append $("<li />").css("background-color", colurs17[each]) for each in [0..grid_size]
+$palette18.append $("<li />").css("background-color", colurs18[each]) for each in [0..grid_size]
+$palette19.append $("<li />").css("background-color", colurs19[each]) for each in [0..grid_size]
+$palette20.append $("<li />").css("background-color", colurs20[each]) for each in [0..grid_size]
+$palette21.append $("<li />").css("background-color", colurs21[each]) for each in [0..grid_size]
