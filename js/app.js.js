@@ -2,9 +2,9 @@
 (function() {
   var $palette, $palette10, $palette11, $palette12, $palette13, $palette14, $palette15, $palette16, $palette17, $palette18, $palette19, $palette2, $palette20, $palette21, $palette3, $palette4, $palette5, $palette6, $palette7, $palette8, $palette9, color1, color2, colurs1, colurs10, colurs11, colurs12, colurs13, colurs14, colurs15, colurs16, colurs17, colurs18, colurs19, colurs2, colurs20, colurs21, colurs3, colurs4, colurs5, colurs6, colurs7, colurs8, colurs9, colurschema1, colurschema2, colurschema3, colurschema4, each, grid_size, grid_size_effective, icreament_size, x, _aa, _ab, _ac, _ad, _ae, _af, _ag, _ah, _ai, _aj, _ak, _al, _am, _an, _ao, _ap, _aq, _ar, _as, _at, _au, _av, _aw, _ax, _ay, _az, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _s, _t, _u, _v, _w, _x, _y, _z;
 
-  color1 = 'red';
+  color1 = 'green';
 
-  color2 = 'yellow';
+  color2 = 'red';
 
   grid_size_effective = 20;
 

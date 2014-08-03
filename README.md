@@ -13,7 +13,7 @@ Install coffee-script with `npm`
 npm install coffee-script
 ```
 
-Root to the project folder and watch for changes to complie to js with
+'cd' to the project folder and watch for changes to complie to js with
 
 ```
 coffee -wc js/app.js.coffee
