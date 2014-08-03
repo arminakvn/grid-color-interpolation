@@ -1,8 +1,8 @@
 # input colors. chromajs colors only if name of the color
-color1 = chroma(40, 0, -70.00, 'lab') # this can be a chroma color object. e.g. chroma(68.67, -13.07, -46.59, 'lab') or a color e.g. 'green'
-color2 = chroma(20, 0, 27.00, 'lab') # this can be a chroma color object. e.g. chroma(76.84, 20.60, 51.06, 'lab') or a color e.g. 'tan'
+color1 = 'red' # this can be a chroma color object. e.g. chroma(68.67, -13.07, -46.59, 'lab') or a color e.g. 'green'
+color2 = 'yellow' # this can be a chroma color object. e.g. chroma(76.84, 20.60, 51.06, 'lab') or a color e.g. 'tan'
 
-# grid size. still experimental. default set to 12 for using lch color model
+# grid size. still experimental. lch color model sometimes works better in 12 to 12 grids/needs more work
 grid_size_effective = 20
 grid_size = grid_size_effective # placeholder for a later idea to scale with eater detail  
 icreament_size = 1 / grid_size
