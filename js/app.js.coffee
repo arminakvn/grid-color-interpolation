@@ -24,8 +24,20 @@ showGrid = (cs1, cs2, steps) ->
 
 	# set the width based on size
 	gridwidthpix = steps * 25
-	if steps < 18 
+	if steps < 9
+		gridwidth = gridwidthpix + 55
+	else if steps < 10 
+		gridwidth = gridwidthpix + 27
+	else if steps < 11 
+		gridwidth = gridwidthpix + 55
+	else if steps < 12 
+		gridwidth = gridwidthpix + 27
+	else if steps < 18 
 		gridwidth = gridwidthpix + 50
+	else if steps < 19
+		gridwidth = gridwidthpix + 48
+	else if steps < 20 
+		gridwidth = gridwidthpix + 55
 	else if steps < 22
 		gridwidth = gridwidthpix + 25 
 	else if steps < 25
