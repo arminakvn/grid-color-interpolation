@@ -47,7 +47,6 @@
       gridwidth = gridwidthpix + 50;
     }
     $("#outgrid").css('width', gridwidth);
-    console.log(gridwidth);
     colurschema1 = [];
     colurschema2 = [];
     colurschema3 = [];
