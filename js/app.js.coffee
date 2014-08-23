@@ -59,6 +59,7 @@ showGrid = (cs1, cs2, steps) ->
 	colurschema4.push chroma.interpolate("white", color2, x, "lch").hex() for x in [0..1] by icreament_size
 
 	colurs = []
+	cols1 = []
 	colursstatements = []
 	for i in [1..grid_size]
 		colurs.push "colurs" + i 
@@ -71,7 +72,12 @@ showGrid = (cs1, cs2, steps) ->
 		cl1 = colurschema3[x] 
 		cl2 = colurschema2[x]
 		$outgrid.append $("<li />").css("background-color", chroma.interpolate(cl1,  cl2, m, "lch")) for m in [0..1] by icreament_size
+		cols1.push chroma.interpolate(cl1,  cl2, m, "lch") for m in [0..1] by icreament_size
 		$outgrid.append $("<li />").css("background-color", colurschema4)
+	
+	$('<pre/>')
+		.html('[\'' + cols1.join('\', \'') + '\']')
+    	.appendTo('#outgrid')
 
 
 # based on Gregor Aisch's Chroma.js Color Scale Helper on jsfiddle: http://jsfiddle.net/vis4/cYLZH/

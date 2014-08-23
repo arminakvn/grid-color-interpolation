@@ -3,7 +3,7 @@
   var showGrid, updategrid;
 
   showGrid = function(cs1, cs2, steps) {
-    var $outgrid, $palettes, cl1, cl2, color1, color2, colurs, colurschema1, colurschema2, colurschema3, colurschema4, colurseq, colursstatements, grid_size, grid_size_effective, gridwidth, gridwidthpix, i, icreament_size, m, n, pallets, x, _i, _j, _k, _l, _m, _n, _o, _p, _q, _ref, _ref1, _results;
+    var $outgrid, $palettes, cl1, cl2, color1, color2, cols1, colurs, colurschema1, colurschema2, colurschema3, colurschema4, colurseq, colursstatements, grid_size, grid_size_effective, gridwidth, gridwidthpix, i, icreament_size, m, n, pallets, x, _i, _j, _k, _l, _m, _n, _o, _p, _q, _r, _ref, _ref1;
     color1 = cs1;
     color2 = cs2;
     grid_size_effective = steps;
@@ -61,6 +61,7 @@
       colurschema4.push(chroma.interpolate("white", color2, x, "lch").hex());
     }
     colurs = [];
+    cols1 = [];
     colursstatements = [];
     for (i = _o = 1; 1 <= grid_size ? _o <= grid_size : _o >= grid_size; i = 1 <= grid_size ? ++_o : --_o) {
       colurs.push("colurs" + i);
@@ -68,16 +69,18 @@
     colurs[i];
     colurseq = colurs[i] = [];
     $('#outgrid').html('');
-    _results = [];
     for (x = _p = 0, _ref1 = grid_size - 1; 0 <= _ref1 ? _p <= _ref1 : _p >= _ref1; x = 0 <= _ref1 ? ++_p : --_p) {
       cl1 = colurschema3[x];
       cl2 = colurschema2[x];
       for (m = _q = 0; _q <= 1; m = _q += icreament_size) {
         $outgrid.append($("<li />").css("background-color", chroma.interpolate(cl1, cl2, m, "lch")));
       }
-      _results.push($outgrid.append($("<li />").css("background-color", colurschema4)));
+      for (m = _r = 0; _r <= 1; m = _r += icreament_size) {
+        cols1.push(chroma.interpolate(cl1, cl2, m, "lch"));
+      }
+      $outgrid.append($("<li />").css("background-color", colurschema4));
     }
-    return _results;
+    return $('<pre/>').html('[\'' + cols1.join('\', \'') + '\']').appendTo('#outgrid');
   };
 
   updategrid = function() {
